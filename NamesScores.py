@@ -1,5 +1,5 @@
 import string
-class GetNames(object):
+class Names_Scores(object):
 	def __init__(self, fileName):
 		self.filename = fileName
 	def GetListOfNames(self):
@@ -15,6 +15,7 @@ class GetNames(object):
 		return alphabetDict
 	def CalculateNamesScores(self,namesList):	
 		alphabetDict = dict()
+		namesScores = dict()
 		alphabetDict = self.AlphabetValues()
 		for v,nameScore in enumerate([sum(alphabetDict[l] for l in name) for name in namesList], 1):
 			namesScores[v] = nameScore * v
@@ -27,6 +28,6 @@ class GetNames(object):
 		print 'the total of all names scores in the file is: ' + str(sum(dictNamesScores.itervalues()))
 
 print 'Project Euler problem 22 - Names scores'
-NamesScores = GetNames('c:\p022_names.txt')
-NamesScores.CalculateTotalNameScores()
+_Names_Scores = Names_Scores('c:\p022_names.txt')
+_Names_Scores.CalculateTotalNameScores()
 
